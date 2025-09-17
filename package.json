@@ -2,7 +2,7 @@
   "name": "style-helper-icon-mask",
   "version": "1.0.0",
   "source": "src/icon.scss",
-  "main": "index.js",
+  "main": "src/mixin.scss",
   "sass": "src/mixin.scss",
   "style": "dist/icon.css",
   "files": [
