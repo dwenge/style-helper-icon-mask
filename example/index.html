@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+
+    <link rel="stylesheet" href="../dist/icon.css" />
+    <style>
+      .i-example {
+        --dw-icon: url("https://unpkg.com/bootstrap-icons@1.13.1/icons/bootstrap-fill.svg");
+      }
+      .green {
+        color: green;
+      }
+      .i_lg {
+        --dw-icon-width: 2rem;
+      }
+      p {
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span class="i i-example"></span>
+      Original
+    </p>
+    <p style="color: white; background-color: black" id="change-color">
+      <span class="i i_mask i-example"></span>
+      Mask (change color)
+    </p>
+    <p>
+      <span class="i i-example i_lg"></span>
+      Origianl (size)
+    </p>
+    <p style="color: white; background-color: black">
+      <span class="i i_mask i-example i_lg"></span>
+      Mask (size)
+    </p>
+
+    <script>
+      const el = document.getElementById("change-color");
+      el.style.transition = "color 250ms";
+      const colors = ["red", "blue", "green", "white"];
+      let i = 0;
+
+      (function changeColor() {
+        el.style.color = colors[i];
+        if (++i >= colors.length) i = 0;
+        setTimeout(() => changeColor(), 1000);
+      })();
+    </script>
+  </body>
+</html>

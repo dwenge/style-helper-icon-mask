@@ -1,0 +1,30 @@
+@mixin icon($prefix: "dw-") {
+  display: inline-block;
+  font-size: 0;
+  width: var(--#{$prefix}icon-width);
+  height: var(--#{$prefix}icon-height);
+
+  &:before {
+    content: var(--#{$prefix}icon);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+  }
+
+  &_mask {
+    position: relative;
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      mask: var(--#{$prefix}icon) center no-repeat;
+      mask-size: contain;
+      background-color: currentColor;
+    }
+  }
+}
