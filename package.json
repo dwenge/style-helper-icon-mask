@@ -1,14 +1,16 @@
 {
-  "name": "parcel-vanilla-starter",
+  "name": "style-helper-icon-mask",
   "private": true,
-  "version": "0.0.0",
-  "source": "src/index.html",
+  "version": "1.0.0",
+  "source": "src/icon.scss",
+  "sass": "src/mixin.scss",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel watch",
+    "build": "npm run clean; NODE_ENV=production parcel build --no-source-maps --no-cache",
+    "clean": "rm -rf dist"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.4",
     "parcel": "^2.14.0"
   }
 }
